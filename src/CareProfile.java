@@ -1,28 +1,32 @@
-public class CareProfile {
-    private String feedingInstructions;
-    private String medicationList;
-    private String medicationInstructions;
+import java.util.List;
 
-    public CareProfile(String feedingInstructions, String medicationList, String medicationInstructions) {
-        this.feedingInstructions = feedingInstructions;
-        this.medicationList = medicationList;
+public class CareProfile {
+    private Pet pet;
+    private FeedingInstruction feedingInstruction;
+    private List<MedicationInstruction> medicationInstructions;
+
+    public CareProfile(Pet pet, FeedingInstruction feedingInstruction, List<MedicationInstruction> medicationInstructions) {
+        this.pet = pet;
+        this.feedingInstruction = feedingInstruction;
         this.medicationInstructions = medicationInstructions;
     }
 
-    public String getFeedingInstructions() {
-        return feedingInstructions;
-    }
+    // Getters and Setters
+    public Pet getPet() { return pet; }
+    public void setPet(Pet pet) { this.pet = pet; }
 
-    public String getMedicationList() {
-        return medicationList;
-    }
+    public FeedingInstruction getFeedingInstruction() { return feedingInstruction; }
+    public void setFeedingInstruction(FeedingInstruction feedingInstruction) { this.feedingInstruction = feedingInstruction; }
 
-    public String getMedicationInstructions() {
-        return medicationInstructions;
-    }
+    public List<MedicationInstruction> getMedicationInstructions() { return medicationInstructions; }
+    public void setMedicationInstructions(List<MedicationInstruction> medicationInstructions) { this.medicationInstructions = medicationInstructions; }
 
     @Override
     public String toString() {
-        return "CareProfile { feedingInstructions = '" + feedingInstructions + "', medicationList = '" + medicationList + "', medicationInstructions = '" + medicationInstructions + "'}";
-    } 
+        return "CareProfile{" +
+                "pet=" + (pet != null ? pet.getName() : "null") +
+                ", feedingInstruction=" + feedingInstruction +
+                ", medicationInstructions=" + (medicationInstructions != null ? medicationInstructions.size() : 0) +
+                '}';
+    }
 }

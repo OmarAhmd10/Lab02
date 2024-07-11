@@ -1,66 +1,49 @@
-import java.util.List;
-
 public class Pet {
     private String name;
     private String type;
     private int age;
     private String breed;
-    private String status;
+    private String condition;
     private CareProfile careProfile;
-    private Client owner;
-    private List<Employee> assignedEmployees;
-    private List<Booking> bookings;
 
-    public Pet(String name, String type, int age, String breed, String status, CareProfile careProfile, Client owner, List<Employee> assignedEmployees, List<Booking> bookings) {
+    public Pet(String name, String type, int age, String breed, String condition, CareProfile careProfile) {
         this.name = name;
         this.type = type;
         this.age = age;
         this.breed = breed;
-        this.status = status;
+        this.condition = condition;
         this.careProfile = careProfile;
-        this.owner = owner;
-        this.assignedEmployees = assignedEmployees;
-        this.bookings = bookings;
     }
 
-    public String getName() {
-        return name;
-    }
+    // Getters and Setters
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
 
-    public int getAge() {
-        return age;
-    }
+    public int getAge() { return age; }
+    public void setAge(int age) { this.age = age; }
 
-    public String getBreed() {
-        return breed;
-    }
+    public String getBreed() { return breed; }
+    public void setBreed(String breed) { this.breed = breed; }
 
-    public String getStatus() {
-        return status;
-    }
+    public String getCondition() { return condition; }
+    public void setCondition(String condition) { this.condition = condition; }
 
-    public CareProfile getCareProfile() {
-        return careProfile;
-    }
-
-    public Client getOwner() {
-        return owner;
-    }
-
-    public List<Employee> getAssignedEmployees() {
-        return assignedEmployees;
-    }
-
-    public List<Booking> getBookings() {
-        return bookings;
-    }
+    public CareProfile getCareProfile() { return careProfile; }
+    public void setCareProfile(CareProfile careProfile) { this.careProfile = careProfile; }
 
     @Override
     public String toString() {
-        return "Pet{ name = '" + name + "', type = '" + type + "', age = " + age + ", breed = '" + breed + "', status = '" + status + "', careProfile = " + careProfile + ", owner = " + owner + ", assignedEmployees = " + assignedEmployees + ", bookings = " + bookings + '}';
-    } 
+        return "Pet{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", age=" + age +
+                ", breed='" + breed + '\'' +
+                ", condition='" + condition + '\'' +
+                ", careProfile=" + (careProfile != null ? "exists" : "null") +
+                '}';
+    }
 }
+

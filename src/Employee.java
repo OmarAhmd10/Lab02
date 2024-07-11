@@ -3,46 +3,37 @@ import java.util.List;
 public class Employee {
     private String name;
     private String role;
-    private String contactInformation;
+    private String contactInfo;
     private List<Pet> assignedPets;
-    private Employee manager;
-    private List<Employee> subordinates;
 
-    public Employee(String name, String role, String contactInformation, List<Pet> assignedPets, Employee manager, List<Employee> subordinates) {
+    public Employee(String name, String role, String contactInfo, List<Pet> assignedPets) {
         this.name = name;
         this.role = role;
-        this.contactInformation = contactInformation;
+        this.contactInfo = contactInfo;
         this.assignedPets = assignedPets;
-        this.manager = manager;
-        this.subordinates = subordinates;
     }
 
-    public String getName() {
-        return name;
-    }
+    // Getters and Setters
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getRole() {
-        return role;
-    }
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
 
-    public String getContactInformation() {
-        return contactInformation;
-    }
+    public String getContactInfo() { return contactInfo; }
+    public void setContactInfo(String contactInfo) { this.contactInfo = contactInfo; }
 
-    public List<Pet> getAssignedPets() {
-        return assignedPets;
-    }
-
-    public Employee getManager() {
-        return manager;
-    }
-
-    public List<Employee> getSubordinates() {
-        return subordinates;
-    }
+    public List<Pet> getAssignedPets() { return assignedPets; }
+    public void setAssignedPets(List<Pet> assignedPets) { this.assignedPets = assignedPets; }
 
     @Override
     public String toString() {
-        return "Employee { name = '" + name + "', role = '" + role + "', contactInformation = '" + contactInformation + "', assignedPets = " + assignedPets + ", manager = " + manager + ", subordinates = " + subordinates + '}';
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", role='" + role + '\'' +
+                ", contactInfo='" + contactInfo + '\'' +
+                ", assignedPets=" + (assignedPets != null ? assignedPets.size() : 0) +
+                '}';
     }
 }
+

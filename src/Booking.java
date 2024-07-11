@@ -14,44 +14,26 @@ public class Booking {
         this.client = client;
     }
 
-    public LocalDate getBookingDate() {
-        return bookingDate;
-    }
+    // Getters and Setters
+    public LocalDate getBookingDate() { return bookingDate; }
+    public void setBookingDate(LocalDate bookingDate) { this.bookingDate = bookingDate; }
 
-    public List<Pet> getPets() {
-        return pets;
-    }
+    public List<Pet> getPets() { return pets; }
+    public void setPets(List<Pet> pets) { this.pets = pets; }
 
-    public void setPets(List<Pet> pets) {
-        this.pets = pets;
-    }
+    public List<Service> getServices() { return services; }
+    public void setServices(List<Service> services) { this.services = services; }
 
-    public List<Service> getServices() {
-        return services;
-    }
-
-    public void setServices(List<Service> services) {
-        this.services = services;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
+    public Client getClient() { return client; }
+    public void setClient(Client client) { this.client = client; }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("\nBooking {");
-        sb.append("\n  bookingDate = ").append(bookingDate);
-        sb.append("\n  pets = ").append(pets);
-        sb.append("\n  services = ").append(services);
-        sb.append("\n  client = ").append(client.getName());
-        sb.append("\n}");
-        return sb.toString();
+        return "Booking{" +
+                "bookingDate=" + bookingDate +
+                ", pets=" + pets +
+                ", services=" + services +
+                ", client=" + client +
+                '}';
     }
-
 }
